@@ -11,7 +11,7 @@ function ColorPicker() {
     const isSoundOn = useRef(true);
     const soundImageRef = useRef(null);
 
-    const ToggleSound = () => {
+    const toggleSound = () => {
         isSoundOn.current = !isSoundOn.current;
         //Change sound image based on sound state
         soundImageRef.current.src = isSoundOn.current ? soundEnableImage : soundDisableImage;
@@ -103,7 +103,7 @@ function ColorPicker() {
             <div className={styles['navbar']}>
                 <div className={`${styles['app-title']} ${styles['navbar-item']}`}>Color Picker</div>
                 <div className={styles['navbar-item']}>
-                    <img className={styles['img-sound-toggle']} ref={soundImageRef} onClick={ToggleSound} src={soundEnableImage} alt="" />
+                    <img className={styles['img-sound-toggle']} ref={soundImageRef} onClick={toggleSound} src={soundEnableImage} alt="" />
                 </div>
             </div>
             <div className={styles['container']}>
